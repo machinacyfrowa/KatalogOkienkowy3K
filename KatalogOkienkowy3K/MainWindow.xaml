@@ -26,7 +26,7 @@
             FontWeight="Bold" />
         <!-- nowy guzik -->
         <Button Grid.Row="0" Grid.Column="1" 
-                Content="Odśwież" Width="100" />
+                Content="Odśwież" Margin="0 10"/>
         <!-- lista produktów - placeholder - rozciągnięta na dwie kolumny -->
         <TextBlock Grid.Row="1" Grid.Column="0"
                    Text="Tu pojawi się lista produktów"
@@ -37,18 +37,27 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nazwa produktu:"/>
-            <TextBox Grid.Row="0" Grid.Column="1"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Cena:"/>
-            <TextBox Grid.Row="1" Grid.Column="1"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Kategoria:"/>
-            <TextBox Grid.Row="2" Grid.Column="1"/>
-            <Button Grid.Row="3" Grid.Column="0" 
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nazwa produktu:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="0 10"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Cena:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="0 10"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Kategoria:"
+                       VerticalAlignment="Center"/>
+
+            <ComboBox Grid.Row="2" Grid.Column="1" Margin="0 10">
+                <ComboBoxItem Content="Kategoria 1"/>
+                <ComboBoxItem Content="Kategoria 2"/>
+                <ComboBoxItem Content="Kategoria 3"/>
+            </ComboBox>
+            <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10" 
+                      Content="Produkt dostępny" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Row="4" Grid.Column="0" Margin="0 10"
                     Grid.ColumnSpan="2" 
                     Content="Dodaj" />
         </Grid>
@@ -74,8 +83,8 @@
                            Text="0" 
                            FontSize="14"/>
             </StackPanel>
-            <Button Grid.Row="0" Grid.Column="2" Content="Usuń" />
-            <Button Grid.Row="0" Grid.Column="3" Content="Zamknij" />
+            <Button Grid.Row="0" Grid.Column="2" Content="Usuń" Margin="0 0 5 0"/>
+            <Button Grid.Row="0" Grid.Column="3" Content="Zamknij" Margin="5 0 0 0"/>
         </Grid>
     </Grid>
     <!-- stary layout
