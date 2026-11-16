@@ -25,9 +25,9 @@
             FontSize="24" 
             FontWeight="Bold" />
         <!-- nowy guzik -->
-        <Button Grid.Row="0" Grid.Column="1" 
+        <Button x:Name="PrzyciskOdswiez" Grid.Row="0" Grid.Column="1" 
                 Content="Odśwież" Margin="0 10"/>
-        <!-- lista produktów - placeholder - rozciągnięta na dwie kolumny -->
+        <!-- lista produktów - placeholder -->
         <TextBlock Grid.Row="1" Grid.Column="0"
                    Text="Tu pojawi się lista produktów"
                    FontSize="18"/>
@@ -57,16 +57,23 @@
             <TextBlock Grid.Row="3" Grid.Column="0" 
                        Text="Kategoria:" VerticalAlignment="Center"/>
             <ComboBox x:Name="ComboBoxKategoriaProduktu" Grid.Row="3" Grid.Column="1" Margin="0 10">
-                <ComboBoxItem Content="Kategoria 1"/>
-                <ComboBoxItem Content="Kategoria 2"/>
-                <ComboBoxItem Content="Kategoria 3"/>
+                <ComboBoxItem Content="Procesory"/>
+                <ComboBoxItem Content="Karty graficzne"/>
+                <ComboBoxItem Content="Płyty główne"/>
+                <ComboBoxItem Content="Pamięci RAM"/>
+                <ComboBoxItem Content="Dyski SSD"/> 
             </ComboBox>
             <!-- dostępność produktu -->
-            <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10" 
+            <CheckBox x:Name="CheckBoxDostepnoscProduktu" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10" 
                       Content="Produkt dostępny" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Grid.Row="5" Grid.Column="0" Margin="0 10"
-                    Grid.ColumnSpan="2" 
-                    Content="Dodaj" />
+            <Button x:Name="PrzyciskDodaj" Grid.Row="5" Grid.Column="0" Margin="0 10"
+                    Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="pack://application:,,,/Images/plus.png" Width="16" Height="16" Margin="0,0,5,0" />
+                    <TextBlock Text="Dodaj produkt" />
+                </StackPanel>
+            </Button>
+
         </Grid>
         <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
@@ -78,20 +85,20 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="0" Grid.Column="0"> 
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center"> 
                 <TextBlock Text="Produktów: "
                             FontSize="14" FontWeight="Bold" />
                 <TextBlock x:Name="EtykietaLiczbaProduktow" Text="0" FontSize="14" />
             </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="1">
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
                 <TextBlock Text="Łączna wartość: "
                             FontSize="14" FontWeight="Bold" />
                 <TextBlock x:Name="EtykietaWartoscMagazynu" 
                            Text="0" 
                            FontSize="14"/>
             </StackPanel>
-            <Button Grid.Row="0" Grid.Column="2" Content="Usuń" Margin="0 0 5 0"/>
-            <Button Grid.Row="0" Grid.Column="3" Content="Zamknij" Margin="5 0 0 0"/>
+            <Button x:Name="PrzyciskUsun" Grid.Row="0" Grid.Column="2" Content="Usuń" Margin="0 0 5 0"/>
+            <Button x:Name="PrzyciskZamknij" Grid.Row="0" Grid.Column="3" Content="Zamknij" Margin="5 0 0 0"/>
         </Grid>
     </Grid>
     <!-- stary layout
