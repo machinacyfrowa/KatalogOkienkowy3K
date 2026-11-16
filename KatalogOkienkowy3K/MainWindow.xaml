@@ -38,26 +38,33 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <!-- nazwa produktu -->
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Nazwa produktu:" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="0 10"/>
+            <TextBox x:Name="TextBoxNazwaProduktu" Grid.Column="1" Margin="0 10"/>
+            <!-- cena produktu -->
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Cena:" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="0 10"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Kategoria:"
-                       VerticalAlignment="Center"/>
-
-            <ComboBox Grid.Row="2" Grid.Column="1" Margin="0 10">
+            <TextBox x:Name="TextBoxCenaProduktu" Grid.Row="1" Grid.Column="1" Margin="0 10"/>
+            <!-- ilość produktu -->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Ilość:" VerticalAlignment="Center"/>
+            <TextBox x:Name="TextBoxIloscProduktu" Grid.Row="2" Grid.Column="1" Margin="0 10"/>
+            <!-- kategoria produktu -->
+            <TextBlock Grid.Row="3" Grid.Column="0" 
+                       Text="Kategoria:" VerticalAlignment="Center"/>
+            <ComboBox x:Name="ComboBoxKategoriaProduktu" Grid.Row="3" Grid.Column="1" Margin="0 10">
                 <ComboBoxItem Content="Kategoria 1"/>
                 <ComboBoxItem Content="Kategoria 2"/>
                 <ComboBoxItem Content="Kategoria 3"/>
             </ComboBox>
-            <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10" 
+            <!-- dostępność produktu -->
+            <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10" 
                       Content="Produkt dostępny" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Grid.Row="4" Grid.Column="0" Margin="0 10"
+            <Button Grid.Row="5" Grid.Column="0" Margin="0 10"
                     Grid.ColumnSpan="2" 
                     Content="Dodaj" />
         </Grid>
